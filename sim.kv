@@ -1,0 +1,644 @@
+ScreenManager:
+    LoginScreen:
+    HomeScreen:
+    SignupScreen:
+    DataScreen:
+    PerpusScreen:
+    PetugasScreen:
+    AnggotaScreen:
+    PeminjamanScreen:
+    PengembalianScreen:
+    BukuScreen:
+    RakScreen:
+
+<LoginScreen>:
+    name: 'Login'
+    btnLogin_ : btnLogin
+    txtUsername_ : txtUsername
+    txtPassword_ : txtPassword
+
+    MDLabel:
+        text: "Login"
+        pos_hint: {"center_y": .85}
+        font_style: "H3"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+    MDLabel:
+        text: "Welcome to Perpustakaan Online"
+        pos_hint: {"center_y": .75}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        id: txtUsername
+        hint_text: "Username"
+        pos_hint: {"center_x": .5, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .8
+
+    MDTextField:
+        id: txtPassword
+        hint_text: "Password"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .8
+
+    MDRectangleFlatButton:
+        id: btnLogin
+        text: 'Login'
+        pos_hint: {"center_x": .5, "center_y": .3}
+        on_press: root.doLogin()
+
+    MDRectangleFlatButton:
+        text: 'Signup'
+        pos_hint: {'center_x':0.5,'center_y':0.2}
+        on_press: root.manager.current = 'Signup'
+
+<SignupScreen>:
+    name: 'Signup'
+    MDLabel:
+        text: "Sign Up"
+        pos_hint: {"center_y": .85}
+        font_style: "H3"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Daftar Member Perpustakaan Online"
+        pos_hint: {"center_y": .75}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        id: username
+        hint_text: "Username"
+        pos_hint: {"center_x": .5, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .8
+
+    MDTextField:
+        id: password
+        hint_text: "Password"
+        pos_hint: {"center_x": .5, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .8
+        password: True
+
+    MDRectangleFlatButton:
+        text: 'Save'
+        pos_hint: {'center_x':0.5,'center_y':0.4}
+        on_press: root.manager.current = 'Login'
+
+<HomeScreen>:
+    name: 'Beranda'
+    MDLabel:
+        text: "Welcome to Perpustakaan Online"
+        pos_hint: {"center_y": .5}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.4,'center_y':0.1}
+        on_press: root.manager.current = 'Login'
+
+    MDRectangleFlatButton:
+        text: 'Olah Data'
+        pos_hint: {'center_x':0.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<DataScreen>:
+    name: 'Data'
+    MDLabel:
+        text: "Pengolahan Data Perpustakaan Online"
+        pos_hint: {"center_y": .9}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDRectangleFlatButton:
+        text: 'Data Petugas'
+        pos_hint: {'center_x':.3,'center_y':0.6}
+        on_press: root.manager.current = 'Petugas'
+
+    MDRectangleFlatButton:
+        text: 'Data Anggota'
+        pos_hint: {'center_x':.7,'center_y':0.6}
+        on_press: root.doAnggota()
+
+    MDRectangleFlatButton:
+        text: 'Data Peminjaman'
+        pos_hint: {'center_x':.3,'center_y':0.5}
+        on_press: root.manager.current = 'Peminjaman'
+
+    MDRectangleFlatButton:
+        text: 'Data Pengembalian'
+        pos_hint: {'center_x':.7,'center_y':0.5}
+        on_press: root.manager.current = 'Pengembalian'
+
+    MDRectangleFlatButton:
+        text: 'Data Buku'
+        pos_hint: {'center_x':.3,'center_y':0.4}
+        on_press: root.manager.current = 'Buku'
+
+    MDRectangleFlatButton:
+        text: 'Data Rak'
+        pos_hint: {'center_x':.7,'center_y':0.4}
+        on_press: root.manager.current = 'Rak'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Beranda'
+
+<PetugasScreen>:
+    name: 'Petugas'
+    MDLabel:
+        text: "Olah Data Petugas"
+        pos_hint: {"center_y": .9}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Nama Petugas"
+        pos_hint: {'center_x':.2,'center_y':0.7}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .7}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Jabatan"
+        pos_hint: {'center_x':.2,'center_y':0.6}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "No. Telepon"
+        pos_hint: {'center_x':.2,'center_y':0.5}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Alamat"
+        pos_hint: {'center_x':.2,'center_y':0.4}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .4}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDRectangleFlatButton:
+        text: 'Tambah'
+        pos_hint: {'center_x':.3,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<AnggotaScreen>:
+    name: 'Anggota'
+    MDLabel:
+        text: "Olah Data Anggota"
+        pos_hint: {"center_y": .8}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Kode Anggota"
+        pos_hint: {'center_x':.2,'center_y':0.7}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .7}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Nama"
+        pos_hint: {'center_x':.2,'center_y':0.6}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Jenis Kelamin"
+        pos_hint: {'center_x':.2,'center_y':0.5}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Jurusan"
+        pos_hint: {'center_x':.2,'center_y':0.4}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .4}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "No. Telepon"
+        pos_hint: {'center_x':.2,'center_y':0.3}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .3}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Alamat"
+        pos_hint: {'center_x':.2,'center_y':0.2}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .2}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDRectangleFlatButton:
+        text: 'Tambah'
+        pos_hint: {'center_x':.3,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<PeminjamanScreen>:
+    name: 'Peminjaman'
+    MDLabel:
+        text: "Olah Data Peminjaman"
+        pos_hint: {"center_y": .8}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Tanggal Pinjam"
+        pos_hint: {'center_x':.2,'center_y':0.7}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .7}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Tanggal Kembali"
+        pos_hint: {'center_x':.2,'center_y':0.6}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Buku"
+        pos_hint: {'center_x':.2,'center_y':0.5}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Anggota"
+        pos_hint: {'center_x':.2,'center_y':0.4}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .4}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Petugas"
+        pos_hint: {'center_x':.2,'center_y':0.3}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .3}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDRectangleFlatButton:
+        text: 'Tambah'
+        pos_hint: {'center_x':.3,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<PengembalianScreen>:
+    name: 'Pengembalian'
+    MDLabel:
+        text: "Olah Data Pengembalian"
+        pos_hint: {"center_y": .8}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Tanggal Pengembalian"
+        pos_hint: {'center_x':.2,'center_y':0.7}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .7}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Denda"
+        pos_hint: {'center_x':.2,'center_y':0.6}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Buku"
+        pos_hint: {'center_x':.2,'center_y':0.5}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Anggota"
+        pos_hint: {'center_x':.2,'center_y':0.4}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .4}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Petugas"
+        pos_hint: {'center_x':.2,'center_y':0.3}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .3}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDRectangleFlatButton:
+        text: 'Tambah'
+        pos_hint: {'center_x':.3,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<BukuScreen>:
+    name: 'Buku'
+    MDLabel:
+        text: "Olah Data Buku"
+        pos_hint: {"center_y": .8}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Kode Buku"
+        pos_hint: {'center_x':.2,'center_y':0.7}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .7}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Judul Buku"
+        pos_hint: {'center_x':.2,'center_y':0.6}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Penulis"
+        pos_hint: {'center_x':.2,'center_y':0.5}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Penerbit"
+        pos_hint: {'center_x':.2,'center_y':0.4}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .4}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Tahun"
+        pos_hint: {'center_x':.2,'center_y':0.3}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .3}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Stok"
+        pos_hint: {'center_x':.2,'center_y':0.2}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .2}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDRectangleFlatButton:
+        text: 'Tambah'
+        pos_hint: {'center_x':.3,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<RakScreen>:
+    name: 'Rak'
+    MDLabel:
+        text: "Olah Data Rak"
+        pos_hint: {"center_y": .8}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDLabel:
+        text: "Nama Rak"
+        pos_hint: {'center_x':.2,'center_y':0.7}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .7}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "Lokasi Rak"
+        pos_hint: {'center_x':.2,'center_y':0.6}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .6}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDLabel:
+        text: "ID Buku"
+        pos_hint: {'center_x':.2,'center_y':0.5}
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDTextField:
+        pos_hint: {"center_x": .7, "center_y": .5}
+        current_hint_text_color: 0, 0, 0, 1
+        size_hint_x: .5
+
+    MDRectangleFlatButton:
+        text: 'Tambah'
+        pos_hint: {'center_x':.3,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
+
+<PerpusScreen>:
+    name: 'Perpus'
+    MDLabel:
+        text: "Olah Data Anggota"
+        pos_hint: {"center_y": .8}
+        font_style: "H5"
+        halign: "center"
+        theme_text_color: "Custom"
+        text_color: 0, 0, 0, 1
+
+    MDRectangleFlatButton:
+        text: 'Back'
+        pos_hint: {'center_x':.7,'center_y':0.1}
+        on_press: root.manager.current = 'Data'
